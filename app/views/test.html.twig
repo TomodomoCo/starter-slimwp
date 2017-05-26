@@ -1,0 +1,14 @@
+<h1>Pages</h1>
+
+{% if pages %}
+<p>Here are the pages on the site:</p>
+
+<ul>
+	{% for page in pages %}
+	<li>{{page.post_title}}</li>
+	{% endfor %}
+</ul>
+
+{% else %}
+<p>No pages here.</p>
+{% endif %}
