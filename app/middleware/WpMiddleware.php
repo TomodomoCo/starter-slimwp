@@ -1,6 +1,6 @@
 <?php
 
-namespace ECommerceFuel\Middleware;
+namespace App\Middleware;
 
 class WpMiddleware
 {
