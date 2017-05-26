@@ -2,7 +2,7 @@
 
 namespace ECommerceFuel\Middleware;
 
-class AuthMiddleware
+class WpMiddleware
 {
 
 	public function load($request, $response, $next)
