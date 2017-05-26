@@ -1,0 +1,52 @@
+{
+  "name": "vanpattenmedia/vpmframe-slimwp",
+  "description": "Proof-of-concept blend between Slim and WP",
+  "type": "project",
+  "license": "BSD-3-Clause",
+  "config": {
+    "vendor-dir": "vendor/composer"
+  },
+  "authors": [
+    {
+      "name": "Chris Van Patten",
+      "email": "chris@vanpattenmedia.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url" : "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "slim/slim": "^3.1",
+    "slim/twig-view": "^2.0",
+    "slim/flash": "*",
+    "monolog/monolog": "^1.17",
+    "twig/twig": "1.*",
+    "twig/extensions": "^1.4",
+    "oscarotero/psr7-middlewares": "^3.16",
+    "johnpbloch/wordpress": "^4.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": [
+        "app/Models/"
+      ],
+      "App\\Controllers\\": [
+        "app/Controllers/"
+      ],
+      "App\\Middleware\\": [
+        "app/Middleware/"
+      ]
+    }
+  },
+  "extra": {
+    "wordpress-install-dir": "public/wp",
+    "installer-paths": {
+      "public/wp-content/plugins/{$name}":    ["type:wordpress-plugin"],
+      "public/wp-content/mu-plugins/{$name}": ["type:wordpress-muplugin"],
+      "public/wp-content/themes/{$name}":     ["type:wordpress-theme"]
+    }
+  }
+}
