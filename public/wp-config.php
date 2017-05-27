@@ -5,10 +5,13 @@
  */
 require_once( ABSPATH . '../../vendor/composer/autoload.php' );
 
+$app = json_decode(file_get_contents(dirname(__FILE__) . './../config/application.json'), true);
+$db  = json_decode(file_get_contents(dirname(__FILE__) . './../config/database.json'), true);
+
 /**
  * Settings
  */
-define('WP_HOME', 'http://domain.com');
+define('WP_HOME', $app['home']);
 
 /**
  * Don't do default cron
@@ -39,10 +42,10 @@ define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 /**
  * Set up databases
  */
-define('DB_NAME', '');
-define('DB_USER', '');
-define('DB_PASSWORD', '');
-define('DB_HOST', '');
+define('DB_NAME', $db['name']);
+define('DB_USER', $db['user']);
+define('DB_PASSWORD', $db['password']);
+define('DB_HOST', $db['host']);
 $table_prefix = 'wp_';
 
 /**

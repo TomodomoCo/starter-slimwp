@@ -16,11 +16,9 @@ $app->group('', function() use ($app) {
 })->add('App\Middleware\WpMiddleware:load');
 
 /**
- * Handle trailing slashes
+ * Support trailing slash
  */
-$slash = new TrailingSlash(false);
-$slash->redirect(301);
-$app->add($slash);
+$app->add(new TrailingSlash(false));
 
 /**
  * Fallback
