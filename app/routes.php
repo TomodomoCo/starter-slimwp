@@ -23,7 +23,7 @@ $app->add(new TrailingSlash(false));
 /**
  * Fallback
  */
-$app->any('/{path:.+}', function() {
+$app->any('{path:.+}', function() {
 	require __DIR__ . '/../public/wp/index.php';
 	exit;
 });
