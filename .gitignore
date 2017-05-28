@@ -1,5 +1,4 @@
 vendor
 public/wp
 wp-content/plugins
-config/application.json
 config/database.json
